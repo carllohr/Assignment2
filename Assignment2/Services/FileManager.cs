@@ -26,7 +26,7 @@ namespace Assignment2.Services
             _contacts = new ObservableCollection<Contact>();
         }
 
-        public void Read(ref ObservableCollection<Contact> list)
+        public void Read(ref ObservableCollection<Contact> list) // reads data from json file
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Assignment2.Services
             }
         }
 
-        public void Save(ObservableCollection<Contact> list)
+        public void Save(ObservableCollection<Contact> list) // saves contacts to json file
         {
             try
             {
@@ -51,12 +51,7 @@ namespace Assignment2.Services
 
             }
         }
-        /*public ObservableCollection<Contact> GetContacts(ObservableCollection<Contact> contacts)
-        {
-            Read(ref _contacts);
-            return _contacts;
-        } 
-        */
+       
         
     } 
 
