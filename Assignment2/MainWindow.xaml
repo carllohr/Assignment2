@@ -1,0 +1,83 @@
+﻿<Window x:Class="Assignment2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+
+
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="5">
+                <TextBlock Text="Förnamn" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_FirstName" Style="{StaticResource field}"/>
+
+                <TextBlock Text="Efternamn" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_LastName" Style="{StaticResource field}"/>
+
+                <TextBlock Text="Email" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_Email" Style="{StaticResource field}"/>
+
+                <TextBlock Text="Telefonnummer" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_Phone" Style="{StaticResource field}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Address" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_Address" Style="{StaticResource field}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="7 0">
+                        <TextBlock Text="ZIP Code" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_Zip" Style="{StaticResource field}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="City" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_City" Style="{StaticResource field}"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <Button Style="{StaticResource addButton}" x:Name="btn_Add" Click="btn_Add_Click" Grid.Row="1" Content="Add contact" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+            <Button Style="{StaticResource addButton}" x:Name="btn_Update" Click="btn_Update_Click" Grid.Row="1" Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+            <Button Style="{StaticResource addButton}" x:Name="btn_Back" Click="btn_Back_Click" Grid.Row="1" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+
+        </Grid>
+        
+        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged" Grid.Column="1" Margin="5" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="fullNameTxt" Text="{Binding FullName}"/>
+                            <TextBlock x:Name="emailTxt" Text="{Binding Email}"/>
+                        </StackPanel>
+                        <Button x:Name="deleteBtn" Style="{StaticResource deleteButton}" Click="deleteBtn_Click" Content="&#xE711;" HorizontalAlignment="right"></Button>
+                    </Grid>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+    </Grid>
+</Window>
