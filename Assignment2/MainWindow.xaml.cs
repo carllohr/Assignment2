@@ -32,41 +32,45 @@ namespace Assignment2
             InitializeComponent();
             contacts = new ObservableCollection<Contact>();
             fileService = new FileManager(filePath);
-            GetContacts(); //call getcontacts, if no file exists one will be created
+            GetContacts(); // call getcontacts, if no file exists one will be created
             lv_Contacts.ItemsSource = contacts;
             btn_Update.Visibility = Visibility.Hidden; // have update and back button as hidden 
             btn_Back.Visibility = Visibility.Hidden;
-            
-
-            
         }
 
         private void btn_Add_Click(object sender, RoutedEventArgs e) //adds contact to list and file
         {
-            // check if contact already exists by checking email as unique identifer, cannot add if the case
-            var contactExist = contacts.FirstOrDefault(x => x.Email == tb_Email.Text);
-            if (contactExist == null)
+            
+            if (tb_FirstName.Text != "" && tb_LastName.Text != "") // require user to input first and last name to create a contact
             {
-                var contact = new Contact();
-                contact.FirstName = tb_FirstName.Text;
-                contact.LastName = tb_LastName.Text;
-                contact.Email = tb_Email.Text;
-                contact.Phone = tb_Phone.Text;
-                contact.Address = tb_Address.Text;
-                contact.ZipCode = tb_Zip.Text;
-                contact.City = tb_City.Text;
-                contacts.Add(contact);
-                fileService.Save(contacts);
-            }
-            else
+                var contactExist = contacts.FirstOrDefault(x => x.Email == tb_Email.Text); // check if contact already exists by email as unique id
+                if (contactExist == null)
+                {
+                   
+                    var contact = new Contact();
+                    contact.FirstName = tb_FirstName.Text;
+                    contact.LastName = tb_LastName.Text;
+                    contact.Email = tb_Email.Text;
+                    contact.Phone = tb_Phone.Text;
+                    contact.Address = tb_Address.Text;
+                    contact.ZipCode = tb_Zip.Text;
+                    contact.City = tb_City.Text;
+                    contacts.Add(contact);
+                    fileService.Save(contacts);
+
+                }
+                else
+                {
+                    MessageBox.Show("Contact with given email already exists");
+                }
+            } else
             {
-                MessageBox.Show("Contact with given email already exists");
+                MessageBox.Show("Contact needs a first and last name to be added to list");
             }
             ClearText();
-           
         }
 
-        private void ClearText()
+        private void ClearText() // simple method to clear text fields
         {
             tb_FirstName.Text = "";
             tb_LastName.Text = "";
@@ -84,7 +88,6 @@ namespace Assignment2
             contacts.Remove(contact);
             fileService.Save(contacts);
             ClearText();
-
         }
 
         private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -110,9 +113,6 @@ namespace Assignment2
                 btn_Update.Visibility = Visibility.Hidden;
                 btn_Back.Visibility = Visibility.Hidden;
             }
-
-            
-            
         }
 
         private void btn_Update_Click(object sender, RoutedEventArgs e) //updates information in contact
@@ -125,12 +125,10 @@ namespace Assignment2
             contact.Address = tb_Address.Text;
             contact.ZipCode = tb_Zip.Text;
             contact.City = tb_City.Text;
-            lv_Contacts.UnselectAll(); //unselect item
+            lv_Contacts.UnselectAll(); // unselect item
             ClearText();
             fileService.Save(contacts);
-            lv_Contacts.Items.Refresh(); // refresh listview items so new information gets visible immediately
-            
-            
+            lv_Contacts.Items.Refresh(); // refresh listview items so new information gets visible immediately  
         }
 
         private void btn_Back_Click(object sender, RoutedEventArgs e) //button to go back to 'main menu' after selecting a contact if not wish to update

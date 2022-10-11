@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Addressbook" Height="450" Width="800">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -53,8 +53,8 @@
                 </Grid>
             </StackPanel>
 
-            <Button Style="{StaticResource addButton}" x:Name="btn_Add" Click="btn_Add_Click" Grid.Row="1" Content="Add contact" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
-            <Button Style="{StaticResource addButton}" x:Name="btn_Update" Click="btn_Update_Click" Grid.Row="1" Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+            <Button Style="{StaticResource addButton}" x:Name="btn_Add" Click="btn_Add_Click" Grid.Row="1" Content="Add contact" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" IsDefault="True"/>
+            <Button Style="{StaticResource addButton}" x:Name="btn_Update" Click="btn_Update_Click" Grid.Row="1" Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" IsDefault="True"/>
             <Button Style="{StaticResource addButton}" x:Name="btn_Back" Click="btn_Back_Click" Grid.Row="1" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
 
         </Grid>
