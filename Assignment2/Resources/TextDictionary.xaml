@@ -10,5 +10,4 @@
         <Setter Property="Margin" Value="0 0 0 5"/>
     </Style>
 
-
 </ResourceDictionary>
