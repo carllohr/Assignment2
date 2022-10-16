@@ -53,9 +53,9 @@
                 </Grid>
             </StackPanel>
 
-            <Button Style="{StaticResource addupdateButton}" x:Name="btn_Add" Click="btn_Add_Click" Content="Add contact" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" IsDefault="True"/>
-            <Button Style="{StaticResource addupdateButton}" x:Name="btn_Update" Click="btn_Update_Click" Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" IsDefault="True"/>
-            <Button Style="{StaticResource addupdateButton}" x:Name="btn_Back" Click="btn_Back_Click" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+            <Button Style="{StaticResource addupdateButton}" x:Name="btn_Add" Click="btn_Add_Click" Content="Add contact"/>
+            <Button Style="{StaticResource addupdateButton}" x:Name="btn_Update" Click="btn_Update_Click" Content="Update"/>
+            <Button Style="{StaticResource backButton}" x:Name="btn_Back" Click="btn_Back_Click" Content="Back"/>
 
         </Grid>
         
