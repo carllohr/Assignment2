@@ -59,7 +59,7 @@
 
         </Grid>
         
-        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged" Grid.Column="1" Margin="5" HorizontalContentAlignment="Stretch">
+        <ListView Style="{StaticResource lvItems}" x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
