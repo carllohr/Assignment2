@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2.Models
 {
-    internal class Contact
+    internal class Contact // contact model
     {
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;

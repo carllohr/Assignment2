@@ -71,7 +71,7 @@
                             <TextBlock x:Name="fullNameTxt" Text="{Binding FullName}"/>
                             <TextBlock x:Name="emailTxt" Text="{Binding Email}"/>
                         </StackPanel>
-                        <Button x:Name="deleteBtn" Style="{StaticResource deleteButton}" Click="deleteBtn_Click" Content="&#xE711;" HorizontalAlignment="right"></Button>
+                        <Button x:Name="deleteBtn" Style="{StaticResource deleteButton}" Click="deleteBtn_Click" Content="&#xE711;"></Button>
                     </Grid>
                 </DataTemplate>
                 

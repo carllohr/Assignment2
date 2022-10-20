@@ -38,6 +38,7 @@
     </Style>
     <Style x:Key="deleteButton" TargetType="Button">
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
